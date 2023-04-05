@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="d-flex flex-nowrap">
+      
+      <div class="d-flex flex-column flex-shrink-0 full-height sidebar" style="width: 20vw; height: 100vh;">
+        <h3>Welcome!</h3>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" aria-current="page">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="checkin.html" class="nav-link active">
+              Check-In
+            </a>
+          </li>
+          <li>
+            <a href="checkout.html" class="nav-link">
+              Check-Out
+            </a>
+          </li>
+          <li>
+            <a href="otherser.html" class="nav-link">
+              Other Services
+            </a>
+          </li>
+          <li>
+            <a href="index.html" class="nav-link">
+              Exit
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+      
+      <section class="confirm">
+        <div class="page-content">
+          <div>
+            <div class="headers rounded-top-3">
+                <h1>CONFIRM BOOKING</h1>
+            </div>
+
+            <div class="room-container rounded-bottom-3" style="padding: 2%;">
+                <div class="form-content">
+                    <form action="connect.php" method="post">
+
+                      <div class="row">
+
+                        <div class="col">
+                            
+                            <div class="mb-3 mt-3 col">
+                              <label for="text" class="form-label col-form-label-lg h3">First Name:</label>
+                              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" aria-label="First name">
+                            </div>
+                            
+                            
+                            <div class="mb-3 mt-3 col">
+                              <label for="text" class="form-label col-form-label-lg h3">Last Name:</label>
+                              <input type="text" class="form-control" id="lastName" name="lastName"placeholder="Last name" aria-label="Last name">
+                            </div>
+
+                            <div class="mb-3 mt-3 col">
+                              <label for="email" class="form-label col-form-label-lg h3">Email:</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                            </div>
+              
+                            <div class="mb-3 mt-3 col">
+                              <label for="phone" class="form-label col-form-label-lg h3">Contact Number:</label>
+                              <input type="tel" class="form-control" id="contactNum" name="contactNum" placeholder="Contact Number">
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                          <div class="mb-3 mt-3 col">
+                            <label class="form-label col-form-label-lg h3">Room Number:</label>
+                            <input type="number" class="form-control" name="roomNum" disabled>
+                          </div>
+
+                          <div class="mb-3 mt-3 col">
+                            <label class="form-label col-form-label-lg h3">Check-In:</label>
+                            <input type="date" class="form-control" name="cin">
+                          </div>
+            
+                          <div class="mb-3 mt-3 col">
+                            <label class="form-label col-form-label-lg h3">Check-Out:</label>
+                            <input type="date" class="form-control" name="cout">
+                          </div>
+                        </div>
+                      </div>
+                        
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button class="btn btn-primary confirmbtn" type="submit">Save</button>
+                      </div>
+
+                        
+                    </form>
+
+                    <div class="row" style="margin-top: 3%;">
+                        <div class="col d-grid confirm-btn">
+                            <a href="rooms-checkin.html">
+                                <button class="btn btn-primary confirmbtn col-2">Back</button>
+                            </a>
+                        </div>
+
+                        <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-primary confirmbtn" type="submit">Proceed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- room modal -->
+    <div class="modal fade" id="roomModal">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="roomModalLabel">Confirm Booking</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+  
+          
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="room-container rounded-bottom-3" style="padding: 2%;">
+              <div class="form-content">
+                  <form action="connect.php" method="post">
+
+                    <div class="row">
+
+                      <div class="col">
+                          
+                          <div class="mb-3 mt-3 col">
+                            <label for="text" class="form-label col-form-label-lg h3">First Name:</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" aria-label="First name">
+                          </div>
+                          
+                          
+                          <div class="mb-3 mt-3 col">
+                            <label for="text" class="form-label col-form-label-lg h3">Last Name:</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName"placeholder="Last name" aria-label="Last name">
+                          </div>
+
+                          <div class="mb-3 mt-3 col">
+                            <label for="email" class="form-label col-form-label-lg h3">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                          </div>
+            
+                          <div class="mb-3 mt-3 col">
+                            <label for="phone" class="form-label col-form-label-lg h3">Contact Number:</label>
+                            <input type="tel" class="form-control" id="contactNum" name="contactNum" placeholder="Contact Number">
+                          </div>
+                      </div>
+                      
+                      <div class="col">
+                        <div class="mb-3 mt-3 col">
+                          <label class="form-label col-form-label-lg h3">Room Number:</label>
+                          <input type="number" class="form-control" name="roomNum" disabled>
+                        </div>
+
+                        <div class="mb-3 mt-3 col">
+                          <label class="form-label col-form-label-lg h3">Check-In:</label>
+                          <input type="date" class="form-control" name="cin">
+                        </div>
+          
+                        <div class="mb-3 mt-3 col">
+                          <label class="form-label col-form-label-lg h3">Check-Out:</label>
+                          <input type="date" class="form-control" name="cout">
+                        </div>
+                      </div>
+                    </div>
+                      
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary confirmbtn" type="submit">Save</button>
+                    </div>
+
+                      
+                  </form>
+
+                  <div class="row" style="margin-top: 3%;">
+                      <div class="col d-grid confirm-btn">
+                          <a href="rooms-checkin.html">
+                              <button class="btn btn-primary confirmbtn col-2">Back</button>
+                          </a>
+                      </div>
+
+                      <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button class="btn btn-primary confirmbtn" type="submit">Proceed</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#eqrModal" data-bs-toggle="modal" data-bs-dismiss="modal">Get EQR Key</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+</body>
+</html>
